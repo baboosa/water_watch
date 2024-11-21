@@ -1,10 +1,10 @@
-import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from 'typeorm'
-import { Consumption } from '../consumption/consumption.entity'
+import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from "typeorm";
+import { Consumption } from "../consumption/consumption.entity";
 
 @Entity()
 export class User {
   @PrimaryGeneratedColumn()
-  id: number
+  id: number;
 
   @Column()
   name: string;
@@ -13,5 +13,5 @@ export class User {
   email: string;
 
   @OneToMany(() => Consumption, (consumption) => consumption.user)
-  consumptions: Consumption[]
+  consumptions: Consumption[];
 }
